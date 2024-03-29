@@ -1,0 +1,6 @@
+5
+C Mazda 7.7 Germany 350
+A WizzAir 300 Montenegro 3
+A UIA 400 Greece 4
+C Ford 10 Austria 480 
+C Audi 12 Croatia 450
