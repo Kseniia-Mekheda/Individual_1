@@ -41,10 +41,14 @@ std::istream& operator>>(istream& in, Travel& T) {
 	return in;
 }
 
+bool Travel::operator<(const Travel& T) const {
+	return getTravelPrice() < T.getTravelPrice();
+}
+
 // CAR TRAVEL CLASS
 
 CarTravel::CarTravel()
-	:Travel(),
+	:Travel(new Car, " "),
 	travel_distance(0.)
 {}
 
@@ -78,7 +82,7 @@ void CarTravel::readFrom(istream& in) {
 // FAMILY TRAVEL CLASS
 
 FamilyTravel::FamilyTravel()
-	:Travel(),
+	:Travel(new Airplane, " "),
 	membersQuantity(0)
 {}
 
@@ -144,4 +148,13 @@ void printContainer(Travel** arr, size_t n) {
 		arr[i]->printTravel();
 	}
 	cout << endl;
+}
+
+double getPriceOfAll(Travel** arr, size_t n) {
+	double sum = 0;
+	for (size_t i = 0; i < n; ++i) {
+		sum += arr[i]->getTravelPrice();
+	}
+
+	return sum;
 }

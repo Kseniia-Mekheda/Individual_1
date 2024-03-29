@@ -17,6 +17,7 @@ public:
 	virtual void printTravel() const;
 	Transport& getTransport() const;
 	virtual void readFrom(std::istream& in);
+	bool operator<(const Travel& T) const;
 };
 
 std::istream& operator>>(std::istream& in, Travel& T);
@@ -54,3 +55,4 @@ public:
 
 Travel** createContainer(const std::string& fileName, size_t& n); 
 void printContainer(Travel** arr, size_t n);
+double getPriceOfAll(Travel** arr, size_t n);
