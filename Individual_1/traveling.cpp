@@ -103,7 +103,7 @@ double FamilyTravel::getTravelPrice() const {
 }
 
 void FamilyTravel::printTravel() const {
-	cout << "Family travel to the sea. Airline: " << mean->getBrand() << ". ";
+	cout << "Family travel to the sea. ";
 	Travel::printTravel();
 }
 
