@@ -13,5 +13,12 @@ int main() {
 
 	cout << "Sum of the prices of all travellings: " << getPriceOfAll(container, n) << " usd" << endl;
 
+	cout << endl;
+	findMaxAmongCarTravel(container, n);
+
+	cout << endl;
+	findMaxAmongSeaTravel(container, n);
+
+
 	return 0;
 }

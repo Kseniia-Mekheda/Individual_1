@@ -56,3 +56,7 @@ public:
 Travel** createContainer(const std::string& fileName, size_t& n); 
 void printContainer(Travel** arr, size_t n);
 double getPriceOfAll(Travel** arr, size_t n);
+
+void findMaxAmongCarTravel(Travel** arr, size_t n);
+void findMaxAmongSeaTravel(Travel** arr, size_t n);
+

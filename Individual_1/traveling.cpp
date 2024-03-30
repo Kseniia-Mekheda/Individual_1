@@ -158,3 +158,47 @@ double getPriceOfAll(Travel** arr, size_t n) {
 
 	return sum;
 }
+
+void findMaxAmongCarTravel(Travel** arr, size_t n) {
+	int count = 0;
+	for (size_t i = 0; i < n; ++i) {
+		if (typeid(*arr[i]) == typeid(CarTravel)) {
+			count = i;
+			break;
+		}
+	}
+
+	Travel* max = arr[count];
+	for (size_t i = count + 1; i < n; ++i) {
+		if (typeid(*arr[i]) == typeid(CarTravel)) {
+			if (*max < *arr[i]) {
+				max = arr[i];
+			}
+		}
+	}
+
+	cout << "The most expencive travel among car travels is: " << endl;
+	max->printTravel();
+}
+
+void findMaxAmongSeaTravel(Travel** arr, size_t n) {
+	int count = 0;
+	for (size_t i = 0; i < n; ++i) {
+		if (typeid(*arr[i]) == typeid(FamilyTravel)) {
+			count = i;
+			break;
+		}
+	}
+
+	Travel* max = arr[count];
+	for (size_t i = count + 1; i < n; ++i) {
+		if (typeid(*arr[i]) == typeid(FamilyTravel)) {
+			if (*max < *arr[i]) {
+				max = arr[i];
+			}
+		}
+	}
+
+	cout << "The most expencive travel among family travels is: " << endl;
+	max->printTravel();
+}
