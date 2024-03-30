@@ -60,3 +60,8 @@ double getPriceOfAll(Travel** arr, size_t n);
 void findMaxAmongCarTravel(Travel** arr, size_t n);
 void findMaxAmongSeaTravel(Travel** arr, size_t n);
 
+Travel** onlyCarTravelContainer(Travel** arr, size_t n, size_t& carN);
+Travel** onlySeaTravelContainer(Travel** arr, size_t n, size_t& carN);
+
+void mostExpensiveRide(Travel** arr, size_t n);
+int membersOfACheapestFlight(Travel** arr, size_t n);

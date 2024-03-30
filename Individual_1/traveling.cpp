@@ -202,3 +202,52 @@ void findMaxAmongSeaTravel(Travel** arr, size_t n) {
 	cout << "The most expencive travel among family travels is: " << endl;
 	max->printTravel();
 }
+
+Travel** onlyCarTravelContainer(Travel** arr, size_t n, size_t& carN) {
+	Travel** carContainer = new Travel * [n];
+	carN = 0;
+
+	for (size_t i = 0; i < n; ++i) {
+		if (typeid(*arr[i]) == typeid(CarTravel)) {
+			carContainer[carN] = arr[i];
+			++carN;
+		}
+	}
+
+	return carContainer;
+}
+
+Travel** onlySeaTravelContainer(Travel** arr, size_t n, size_t& seaN) {
+	Travel** seaContainer = new Travel * [n];
+	seaN = 0;
+	for (size_t i = 0; i < n; ++i) {
+		if (typeid(*arr[i]) == typeid(FamilyTravel)) {
+			seaContainer[seaN] = arr[i];
+			++seaN;
+		}
+	}
+
+	return seaContainer;
+}
+
+void mostExpensiveRide(Travel** arr, size_t n) {
+	Travel* max = arr[0];
+	for (size_t i = 1; i < n; ++i) {
+		if (max->getTransport().getPrice() < arr[i]->getTransport().getPrice()) {
+			max = arr[i];
+		}
+	}
+
+	max->getTransport().print();
+}
+
+int membersOfACheapestFlight(Travel** arr, size_t n) {
+	Travel* min = arr[0];
+	for (size_t i = 1; i < n; ++i) {
+		if (*arr[i] < *min) {
+			min = arr[i];
+		}
+	}
+
+	return min->getTravelPrice() / (min->getTransport().getPrice() + 4000);
+}
