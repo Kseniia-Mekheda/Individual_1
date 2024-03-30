@@ -1,5 +1,4 @@
 #include "transport.h"
-#include <iostream>
 using namespace std;
 
 // TRANSPORT CLASS
