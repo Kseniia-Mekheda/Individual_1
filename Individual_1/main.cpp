@@ -37,12 +37,8 @@ int main() {
 	cout << endl;
 	cout << "Family members quantity of a cheapest ride: " << membersOfACheapestFlight(seaContainer, seaSize) << endl;
 	
-	for (size_t i = 0; i < n; ++i) {
-		delete container[i];
-	}
-	delete[] container;
-
-	delete[] carContainer;
-	delete[] seaContainer;
+	deleteArr(container, n);
+	deleteArr(carContainer, carSize);
+	deleteArr(seaContainer, seaSize);
 	return 0;
 }

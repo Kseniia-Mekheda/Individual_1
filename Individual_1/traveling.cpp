@@ -209,7 +209,7 @@ Travel** onlyCarTravelContainer(Travel** arr, size_t n, size_t& carN) {
 
 	for (size_t i = 0; i < n; ++i) {
 		if (typeid(*arr[i]) == typeid(CarTravel)) {
-			carContainer[carN] = arr[i];
+			carContainer[carN] = new CarTravel(*static_cast<CarTravel*>(arr[i]));
 			++carN;
 		}
 	}
@@ -222,7 +222,7 @@ Travel** onlySeaTravelContainer(Travel** arr, size_t n, size_t& seaN) {
 	seaN = 0;
 	for (size_t i = 0; i < n; ++i) {
 		if (typeid(*arr[i]) == typeid(FamilyTravel)) {
-			seaContainer[seaN] = arr[i];
+			seaContainer[seaN] = new FamilyTravel(*static_cast<FamilyTravel*>(arr[i]));
 			++seaN;
 		}
 	}
@@ -250,4 +250,12 @@ int membersOfACheapestFlight(Travel** arr, size_t n) {
 	}
 
 	return min->getTravelPrice() / (min->getTransport().getPrice() + 4000);
+}
+
+void deleteArr(Travel** arr, size_t n) {
+	for (size_t i = 0; i < n; ++i) {
+		delete arr[i];
+	}
+
+	delete[] arr;
 }
