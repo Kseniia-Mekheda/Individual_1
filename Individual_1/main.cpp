@@ -20,14 +20,14 @@ int main() {
 
 	cout << endl;
 	size_t carSize;
-	Travel** carContainer = onlyCarTravelContainer(container, n, carSize);
+	Travel** carContainer = onlyCarTravelContainer(container, n, carSize); // here we could use a regular array instead 
 	cout << "Container with car travels only: " << endl;
 	printContainer(carContainer, carSize);
 
 	cout << endl;
 
 	size_t seaSize;
-	Travel** seaContainer = onlySeaTravelContainer(container, n, seaSize);
+	Travel** seaContainer = onlySeaTravelContainer(container, n, seaSize); // here we could use a regular array instead 
 	cout << "Container with sea travels only: " << endl;
 	printContainer(seaContainer, seaSize);
 
